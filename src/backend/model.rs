@@ -16,4 +16,9 @@ impl Teacher {
             .map(|id| id.key.to_sql())
             .unwrap_or_default()
     }
+
+    pub fn formatted_created_at(&self) -> String {
+        // Format as a more readable date for UI
+        self.created_at.format("%Y-%m-%d %H:%M").to_string()
+    }
 }
