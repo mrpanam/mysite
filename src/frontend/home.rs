@@ -30,7 +30,7 @@ pub fn HomePage() -> impl IntoView {
                                         .into_iter()
                                         .map(|teacher| {
                                             let created_at = teacher.formatted_created_at();
-                                            
+
                                             view! {
                                                 <tr>
                                                     <td class="px-4 py-2">{teacher.id_key()}</td>
@@ -50,6 +50,25 @@ pub fn HomePage() -> impl IntoView {
                     </Suspense>
                 </tbody>
             </table>
+            <div class="mt-8 p-4 bg-gray-50 rounded border border-gray-200">
+                <h2 class="text-xl font-semibold mb-2">"Git SSH Setup"</h2>
+                <ol class="list-decimal list-inside space-y-2 text-sm text-gray-700">
+                    <li>
+                        <code class="font-mono bg-gray-200 px-1 rounded">"ssh-keygen -t ed25519 -C \"your-email@example.com\""</code>
+                    </li>
+                    <li>
+                        <code class="font-mono bg-gray-200 px-1 rounded">"cat ~/.ssh/id_ed25519.pub"</code>
+                    </li>
+                    <li>"Add the key to GitHub: "<a href="https://github.com/settings/keys" class="text-blue-600 underline" target="_blank">"https://github.com/settings/keys"</a></li>
+                    <li>
+                        <code class="font-mono bg-gray-200 px-1 rounded">"git remote set-url origin git@github.com:mrpanam/mysite.git"</code>
+                    </li>
+                    <li>
+                        <code class="font-mono bg-gray-200 px-1 rounded">"git push"</code>
+                    </li>
+                </ol>
+                <p class="mt-2 text-xs text-gray-500">"You can have as many SSH keys as you want on your GitHub account."</p>
+            </div>
         </div>
     }
 }
