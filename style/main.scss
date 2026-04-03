@@ -1,4 +1,23 @@
 body {
-	font-family: sans-serif;
-	text-align: center;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #374151;
+    }
+}
+
+/* Style for active navigation link */
+nav [aria-current="page"] {
+    background-color: lightcoral;
+    color: white;
+    font-weight: 500;
 }

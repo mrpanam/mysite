@@ -34,6 +34,5 @@ pub fn get_db() -> &'static Surreal<Any> {
 pub async fn get_all_teachers() -> Result<Vec<Teacher>, ServerFnError> {
     let db = get_db();
     let teachers: Vec<Teacher> = db.select("teacher").await?;
-    println!("Fetched teachers: {:?}", teachers);
     Ok(teachers)
 }

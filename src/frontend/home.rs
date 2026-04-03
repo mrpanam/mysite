@@ -1,7 +1,5 @@
 use crate::backend::db::get_all_teachers;
-use crate::backend::model::Teacher;
 use leptos::prelude::*;
-use surrealdb_types::RecordIdKey;
 
 #[component]
 pub fn HomePage() -> impl IntoView {

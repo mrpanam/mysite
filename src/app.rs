@@ -1,4 +1,5 @@
 use crate::frontend::home::HomePage;
+use crate::frontend::sidebar::Sidebar;
 use leptos::prelude::*;
 use leptos_meta::{provide_meta_context, MetaTags, Stylesheet, Title};
 use leptos_router::{
@@ -39,11 +40,14 @@ pub fn App() -> impl IntoView {
 
         // content for this welcome page
         <Router>
-            <main>
-                <Routes fallback=|| "Page not found.".into_view()>
-                    <Route path=StaticSegment("") view=HomePage/>
-                </Routes>
-            </main>
+            <div class="flex">
+                <Sidebar />
+                <main class="flex-1 p-6">
+                    <Routes fallback=|| "Page not found.".into_view()>
+                        <Route path=StaticSegment("") view=HomePage/>
+                    </Routes>
+                </main>
+            </div>
         </Router>
     }
 }
